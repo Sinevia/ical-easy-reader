@@ -12,7 +12,9 @@
         {
             "name": "Matias Perrone",
             "role": "Developer"
-        },
-	"classmap": ["iCalEasyReader.php"],
-	 "non-feature-branches": ["latest-.*"]
+        }],
+	"autoload": {
+		"classmap": ["iCalEasyReader.php"]
+	},		
+	"non-feature-branches": ["latest-.*"]
 }
