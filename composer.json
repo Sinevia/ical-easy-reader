@@ -1,5 +1,5 @@
 {
-    "name": "aluGuest/iCalEasyReader",
+    "name": "aluguest/ical-easy-reader",
     "description": "An easy to understood class, loads a \"ics\" format string and returns an array with the traditional iCal fields.",
 	"require": {
 		"php": ">=5.4.0"
