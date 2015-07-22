@@ -1,0 +1,93 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Test airbnb
+X-WR-TIMEZONE:America/Montevideo
+X-WR-CALDESC:
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20150722
+DTEND;VALUE=DATE:20150723
+DTSTAMP:20150708T163306Z
+UID:0rl492rbgufibeema3a24mooeo@google.com
+CREATED:20150708T163234Z
+DESCRIPTION:Here is a new Class:\n\n<?php\n\n/**\n * This is iCalParse\n *\
+ n * @category Parser\n * @author   Timo Henke <phpstuff@thenke.de>\n * @lic
+ ense  http://www.opensource.org/licenses/mit-license.php  MIT License\n */\
+ n\nclass iCalParse\n{\nconst VERSION = "1.0"\;\n\npublic function doParse( 
+ $data )\n{\n$lines = preg_split('/\\\\r?\\\n/'\,$data\,-1\, PREG_SPLIT_NO_E
+ MPTY)\;\n    if( preg_match('/^BEGIN:VCALENDAR/i'\,$lines[0]) && preg_match
+ ('/^END:VCALENDAR/i'\,$lines[sizeof($lines)-1]) )\n    {\n$res = array()\;\
+ n$addTo = array()\;\n$addToElement = ''\;\nforeach ($lines as $line)\n{\nif
+ ( preg_match('/^(BEGIN|END):(VTODO|VEVENT|VCALENDAR|DAYLIGHT|VTIMEZONE|STAN
+ DARD)/s'\,$line\,$m) )\n{\nswitch( $m[1] )\n{\ncase 'BEGIN' :\n$addTo[] = t
+ rim( (sizeof($addTo) > 0 ? $addTo[sizeof($addTo)-1] : '') . '/' . $m[2]\,'/
+ ')\;\nbreak\;\ncase 'END' :\narray_pop($addTo)\;\nbreak\;\n}\nif( sizeof($a
+ ddTo) > 0 )\n{\n$addToElement = $addTo[sizeof($addTo)-1]\;\n}\n}\nelse\n{\n
+ if( substr($line\,0\,1) != ' ' )\n{\n                list($lastkey\,$value)
+  = $this->splitKeyValue($line)\;\n$this->arrayPathSet($res\,$addToElement.'
+ /'.$lastkey\,$value)\;\n\n}\nelse\n{\n$this->arrayPathSet($res\,$addToEleme
+ nt.'/'.$lastkey\,$this->arrayPathGet($res\,$addToElement.'/'.$lastkey) . su
+ bstr($line\,1))\;\n}\n}\n}\n   }\n   return $res\;\n}\n\nfunction arrayPath
+ Set(&$a\, $path\, $value)\n{\n$p = explode('/'\,$path)\;\n$key = array_shif
+ t($p)\;\nif (empty($p))\n{\n$a[$key] = $value\;\n}\nelse\n{\nif (!isset($a[
+ $key]) || !is_array($a[$key]))\n{\n$a[$key] = array()\;\n}\n$this->arrayPat
+ hSet($a[$key]\, implode('/'\,$p)\, $value)\;\n}\n}\n\nfunction arrayPathGet
+ ($data\, $path)\n{\n$found = true\;\n$path = explode("/"\, trim($path\,'/')
+ )\;\n$r = count($path)\;\nfor( $x = 0\; ($x < $r && $found)\; $x++ )\n{\n$k
+ ey = $path[$x]\;\nif (isset($data[$key]))\n{\n$data = $data[$key]\;\n}\nels
+ e\n{\n$found = false\;\n}\n}\nreturn $found ? $data : false\;\n}\n\npublic 
+ function splitKeyValue( $row )\n{\npreg_match("/([^:]+)[:]([\\\\w\\\\W]*)/"
+ \, $row\, $matches)\;\nreturn (sizeof($matches) == 0) ? false : array_splic
+ e($matches\, 1\, 2)\;\n}\n\n}\n"\n  }\n}
+LAST-MODIFIED:20150708T163234Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Ocupado - aluGuest.com
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20150907
+DTEND;VALUE=DATE:20150916
+DTSTAMP:20150708T163306Z
+UID:odbhn3eovufphe6uupl103g8q8@google.com
+CREATED:20150629T200121Z
+DESCRIPTION:
+LAST-MODIFIED:20150629T200121Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Ocupado 3
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20150701
+DTEND;VALUE=DATE:20150709
+DTSTAMP:20150708T163306Z
+UID:dkr8hlt05sisaltivad37e2n24@google.com
+CREATED:20150629T195935Z
+DESCRIPTION:
+LAST-MODIFIED:20150629T195935Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Ocupado 2
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20150624
+DTEND;VALUE=DATE:20150701
+DTSTAMP:20150708T163306Z
+UID:4mf6kh7ke9v5jv2gv2ai34rouc@google.com
+CREATED:20150624T171046Z
+DESCRIPTION:á ñ
+LAST-MODIFIED:20150624T224356Z
+LOCATION:http://panel.elserver.com/#/globalinnovation.com.ar/nitro/
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Ocupado en aluguest á
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,287 @@
+array(4) {
+  ["PRODID"]=>
+  string(28) "-//test//My Calendar 1.0//EN"
+  ["CALSCALE"]=>
+  string(9) "GREGORIAN"
+  ["VERSION"]=>
+  string(3) "2.0"
+  ["VEVENT"]=>
+  array(12) {
+    [0]=>
+    array(5) {
+      ["DTEND"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20131211"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["DTSTART"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20140121"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["UID"]=>
+      string(28) "oc-15446-105-T4M1PQIbbd@test"
+      ["SUMMARY"]=>
+      string(12) "Event - test"
+      ["LOCATION"]=>
+      string(26) "location location location"
+    }
+    [1]=>
+    array(5) {
+      ["DTEND"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20140227"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["DTSTART"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20140404"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["UID"]=>
+      string(28) "oc-15446-351-aWHCdxJ5uk@test"
+      ["SUMMARY"]=>
+      string(12) "Event - test"
+      ["LOCATION"]=>
+      string(26) "location location location"
+    }
+    [2]=>
+    array(5) {
+      ["DTEND"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20140406"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["DTSTART"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20140411"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["UID"]=>
+      string(28) "oc-15446-352-PEKLDQwrsD@test"
+      ["SUMMARY"]=>
+      string(12) "Event - test"
+      ["LOCATION"]=>
+      string(26) "location location location"
+    }
+    [3]=>
+    array(5) {
+      ["DTEND"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20140413"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["DTSTART"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20140428"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["UID"]=>
+      string(28) "oc-15446-353-sAbwLJyJ5w@test"
+      ["SUMMARY"]=>
+      string(12) "Event - test"
+      ["LOCATION"]=>
+      string(26) "location location location"
+    }
+    [4]=>
+    array(5) {
+      ["DTEND"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20140520"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["DTSTART"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20140605"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["UID"]=>
+      string(28) "oc-15446-533-A7VbwGyRjm@test"
+      ["SUMMARY"]=>
+      string(12) "Event - test"
+      ["LOCATION"]=>
+      string(26) "location location location"
+    }
+    [5]=>
+    array(5) {
+      ["DTEND"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20140710"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["DTSTART"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20140718"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["UID"]=>
+      string(28) "oc-15446-825-TVZiHh5kte@test"
+      ["SUMMARY"]=>
+      string(12) "Event - test"
+      ["LOCATION"]=>
+      string(26) "location location location"
+    }
+    [6]=>
+    array(5) {
+      ["DTEND"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20141007"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["DTSTART"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20141107"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["UID"]=>
+      string(29) "oc-15446-1259-gl9tQrR2Ku@test"
+      ["SUMMARY"]=>
+      string(12) "Event - test"
+      ["LOCATION"]=>
+      string(26) "location location location"
+    }
+    [7]=>
+    array(5) {
+      ["DTEND"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20141107"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["DTSTART"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20150121"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["UID"]=>
+      string(29) "oc-15446-1455-X8UTKfj7n3@test"
+      ["SUMMARY"]=>
+      string(12) "Event - test"
+      ["LOCATION"]=>
+      string(26) "location location location"
+    }
+    [8]=>
+    array(5) {
+      ["DTEND"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20150211"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["DTSTART"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20150310"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["UID"]=>
+      string(29) "oc-15446-2295-pUNoPzBMdY@test"
+      ["SUMMARY"]=>
+      string(12) "Event - test"
+      ["LOCATION"]=>
+      string(26) "location location location"
+    }
+    [9]=>
+    array(5) {
+      ["DTEND"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20150318"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["DTSTART"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20150430"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["UID"]=>
+      string(29) "oc-15446-2377-lP9ypc2jx3@test"
+      ["SUMMARY"]=>
+      string(12) "Event - test"
+      ["LOCATION"]=>
+      string(26) "location location location"
+    }
+    [10]=>
+    array(5) {
+      ["DTEND"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20150430"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["DTSTART"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20150501"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["UID"]=>
+      string(29) "oc-15446-2378-m9sMZBe9Aq@test"
+      ["SUMMARY"]=>
+      string(12) "Event - test"
+      ["LOCATION"]=>
+      string(26) "location location location"
+    }
+    [11]=>
+    array(5) {
+      ["DTEND"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20150531"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["DTSTART"]=>
+      array(2) {
+        ["value"]=>
+        string(8) "20150809"
+        ["type"]=>
+        string(4) "DATE"
+      }
+      ["UID"]=>
+      string(29) "oc-15446-1456-Hfv1nIYJHt@test"
+      ["SUMMARY"]=>
+      string(12) "Event - test"
+      ["LOCATION"]=>
+      &string(26) "location location location"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+https://www.airbnb.com/calendar/ical/6676218.ics?s=56ebe9326a274642512d08e5fd8c60e6
+
+BEGIN:VCALENDAR
+PRODID;X-RICAL-TZSOURCE=TZINFO:-//Airbnb Inc//Hosting Calendar 0.8.8//EN
+CALSCALE:GREGORIAN
+VERSION:2.0
+BEGIN:VEVENT
+DTEND;VALUE=DATE:20150707
+DTSTART;VALUE=DATE:20150628
+UID:-xxtjtjzfwzrt-vj588tkdma1k@airbnb.com
+DESCRIPTION:CHECKIN:  28/06/2015\nCHECKOUT: 07/07/2015\nNIGHTS:   9\nPHON
+ E:    +598 98963744\nEMAIL:    cecilia-jk686ocp61d1f7ww@guest.airbnb.com
+ \nPROPERTY: Theater District - Cozy & New 31\n
+SUMMARY:Cecilia Salazar (HMSCD2)
+LOCATION:Theater District - Cozy & New 31
+END:VEVENT
+END:VCALENDAR
