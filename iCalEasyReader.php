@@ -7,7 +7,7 @@
  * @author		Matias Perrone <matias.perrone at gmail dot com>
  * @author		Timo Henke <phpstuff@thenke.de> (Some ideas taken partially from iCalParse on http://www.phpclasses.org/)
  * @license		http://www.opensource.org/licenses/mit-license.php MIT License
- * @version		1.3
+ * @version		1.4
  * @param	string	$data	ics file string content
  * @param	array|false	$data $makeItEasy	the idea is to convert this "keys" into the "values", converting the DATE and DATE-TIME values to the respective DateTime type of PHP, also all the keys are lowercased
  * @return	array|false
@@ -16,7 +16,7 @@ class iCalEasyReader
 {
 	private $ical = null;
 
-	public function &load($data, $makeItEasy = ['VEVENT' => 'event'])
+	public function &load($data)
 	{
 		$this->ical = false;
 		$regex_opt = 'mib';
@@ -67,11 +67,13 @@ class iCalEasyReader
 			foreach ( $lines as $line )
 			{
 				$clave = null;
-				$pattern = '^(BEGIN|END)\:(VTODO|VEVENT|VCALENDAR|DAYLIGHT|VTIMEZONE|STANDARD)';
+				$pattern = '^(BEGIN|END)\:(.+)$'; // (VALARM|VTODO|VJOURNAL|VEVENT|VFREEBUSY|VCALENDAR|DAYLIGHT|VTIMEZONE|STANDARD)
 				mb_ereg_search_init( $line );
 				$regs = mb_ereg_search_regs( $pattern, $regex_opt );
 				if ($regs)
 				{
+					var_dump( $regs );
+					die();
 					// $regs
 					// 0 => BEGIN:VEVENT
 					// 1 => BEGIN
