@@ -29,7 +29,7 @@ class iCalEasyReader
 		$last = count( $lines );
 		for($i = 0; $i < $last; $i ++)
 		{
-			if (trim( $lines[$i] ) == '')
+			if (  trim( $lines[$i] ) == "" )
 				unset( $lines[$i] );
 		}
 		$lines = array_values( $lines );
@@ -65,8 +65,19 @@ class iCalEasyReader
 			$this->ical = [];
 			$addTo = [];
 			$addToElement = null;
-			foreach ( $lines as $line )
+			reset($lines);
+			$line = true;
+			while ( true )
 			{
+				$line = each($lines);
+				if ($line === false)
+					break;
+
+				$line = current($lines);
+
+				if (  substr( $line, 0, 2) === 'X-' Or trim($line) == '')
+					continue;
+
 				$clave = null;
 				$pattern = '^(BEGIN|END)\:(.+)$'; // (VALARM|VTODO|VJOURNAL|VEVENT|VFREEBUSY|VCALENDAR|DAYLIGHT|VTIMEZONE|STANDARD)
 				mb_ereg_search_init( $line );
@@ -115,6 +126,24 @@ class iCalEasyReader
 					continue;
 				}
 
+				// There are cases like "ATTENDEE" that may take several lines.
+				if ( !in_array( $line[0], [" ", "\t"] ) And strpos( ':', $line ) === false )
+				{
+					$r = current($lines);
+					$concatenar = next($lines);
+					while ( $concatenar And in_array( $concatenar[0], [" ", "\t"] ) )
+					{
+						$r .= substr($concatenar, 1);
+						$concatenar = next($lines);
+					}
+					prev($lines);
+					if ($r !== $line )
+					{
+						$line = $r;
+//						echo $line.PHP_EOL;
+					}
+				}
+
 				if (! in_array( $line[0], [" ", "\t"] ))
 					$this->addItem( $line, $group, $parentgroup );
 				else
@@ -141,6 +170,13 @@ class iCalEasyReader
 	{
 		$line = $this->transformLine( $line );
 		$item = explode( ':', $line, 2 );
+
+		if (!array_key_exists( 1, $item ))
+		{
+			trigger_error ("Unexpected Line error. Possible Corruption. Line ".strlen( $line ).":".PHP_EOL.$line.PHP_EOL, E_USER_NOTICE);
+			return;
+		}
+
 		// If $group is null is an independent value
 		if (is_null( $group ))
 		{
@@ -151,7 +187,7 @@ class iCalEasyReader
 		else
 		{
 			$subitem = explode( ';', $item[0], 2 );
-			if (!is_array( $subitem) || count( $subitem ) == 1)
+			if (count( $subitem ) == 1)
 				$value = ( count( $item ) > 1 ? $item[1] : null );
 			else
 			{
