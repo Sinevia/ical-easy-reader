@@ -138,10 +138,7 @@ class iCalEasyReader
 					}
 					prev($lines);
 					if ($r !== $line )
-					{
 						$line = $r;
-//						echo $line.PHP_EOL;
-					}
 				}
 
 				if (! in_array( $line[0], [" ", "\t"] ))
@@ -192,24 +189,15 @@ class iCalEasyReader
 			else
 			{
 				$value = ['value' => $item[1]];
-				$this->addType( $value, $subitem[1] );
+				if (strpos($subitem[1], ";") !== false)
+					$value += $this->processMultivalue($subitem[1]);
+				else
+					$this->addType( $value, $subitem[1] );
 			}
 
 			// Multi value
 			if (is_string( $value ))
-			{
-				$z = explode( ';', $value );
-				if (count( $z ) > 1)
-				{
-					$value = [];
-					foreach ( $z as &$v )
-					{
-						$t = explode( '=', $v );
-						$value[$t[0]] = $t[count( $t ) - 1];
-					}
-				}
-				unset( $z );
-			}
+				$this->processMultivalue($value);
 
 			if (is_null( $parentgroup ))
 			{
@@ -222,6 +210,22 @@ class iCalEasyReader
 				$this->_lastitem = &$this->ical[$parentgroup][$group][count( $this->ical[$parentgroup][$group] ) - 1][$subitem[0]];
 			}
 		}
+	}
+
+	public function processMultivalue(&$value)
+	{
+		$z = explode( ';', $value );
+		if (count( $z ) > 1)
+		{
+			$value = [];
+			foreach ( $z as &$v )
+			{
+				$t = explode( '=', $v );
+				$value[$t[0]] = $t[count( $t ) - 1];
+			}
+		}
+		unset( $z );
+		return $value;
 	}
 
 	public function concatItem($line)
