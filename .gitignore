@@ -46,3 +46,5 @@ Temporary Items
 .settings
 .buildpath
 .project
+/nbproject/*
+/nbproject/*/

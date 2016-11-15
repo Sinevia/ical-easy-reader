@@ -151,7 +151,7 @@ class iCalEasyReader
 		else
 		{
 			$subitem = explode( ';', $item[0], 2 );
-			if (count( $subitem ) == 1)
+			if (!is_array( $subitem) || count( $subitem ) == 1)
 				$value = ( count( $item ) > 1 ? $item[1] : null );
 			else
 			{
